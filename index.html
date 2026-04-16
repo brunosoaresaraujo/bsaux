@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>ProsIA | Interfaces que Escalam com IA</title>
+
+    <!-- Scripts & Libraries -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body>
+
+    <!-- Background Elements -->
+    <div class="fixed inset-0 -z-30 pointer-events-none mesh-gradient">
+        <div class="noise-overlay"></div>
+        <div class="absolute inset-0 bg-[#050505] dot-grid"></div>
+        <div id="cursor-glow" class="cursor-glow"></div>
+
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#050505]/40 to-[#050505]"></div>
+
+        <!-- Enhanced Vertical Beams from Lumina Reference -->
+        <div class="absolute inset-0 max-w-7xl mx-auto flex justify-between px-0 opacity-40">
+            <div class="flex-1 border-l border-white/5 h-full relative overflow-hidden">
+                <div class="absolute top-0 w-full h-64 bg-gradient-to-b from-transparent via-[#FF9900]/40 to-transparent animate-beam"
+                    style="animation-delay: 0s;"></div>
+            </div>
+            <div class="flex-1 border-l border-white/5 h-full relative overflow-hidden hidden md:block">
+                <div class="absolute top-0 w-full h-48 bg-gradient-to-b from-transparent via-[#FF2272]/60 to-transparent animate-beam"
+                    style="animation-delay: 2s; animation-duration: 4s;"></div>
+            </div>
+            <div class="flex-1 border-l border-white/5 h-full relative overflow-hidden">
+                <div class="absolute top-0 w-full h-80 bg-gradient-to-b from-transparent via-[#FF2272]/30 to-transparent animate-beam"
+                    style="animation-delay: 5s; animation-duration: 10s;"></div>
+                <div class="h-full border-r border-dashed border-white/5 w-px absolute right-0"></div>
+            </div>
+            <div class="flex-1 border-l border-white/5 h-full relative overflow-hidden hidden md:block">
+                <div class="absolute top-0 w-full h-32 bg-gradient-to-b from-transparent via-[#FF9900]/50 to-transparent animate-beam"
+                    style="animation-delay: 3s; animation-duration: 7s;"></div>
+            </div>
+            <div class="flex-1 border-l border-white/5 h-full relative overflow-hidden">
+                <div class="absolute top-0 w-full h-96 bg-gradient-to-b from-transparent via-[#FF2272]/20 to-transparent animate-beam"
+                    style="animation-delay: 1s; animation-duration: 9s;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 w-full z-50 border-b border-white/5 bg-[#050505]/40 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center group cursor-pointer">
+                <img src="assets/img/logobsaux.svg"
+                    class="h-8 md:h-9 w-auto group-hover:scale-105 transition-transform duration-500" alt="BSAUX Logo">
+            </div>
+
+            <!-- Menu -->
+            <div class="hidden lg:flex items-center gap-10">
+                <a href="#experience"
+                    class="text-[10px] uppercase font-bold tracking-widest text-neutral-400 hover:text-white transition-colors">Processo</a>
+                <a href="#work"
+                    class="text-[10px] uppercase font-bold tracking-widest text-neutral-400 hover:text-white transition-colors">Portfolio</a>
+                <a href="#about"
+                    class="text-[10px] uppercase font-bold tracking-widest text-neutral-400 hover:text-white transition-colors">Sobre</a>
+                <a href="#"
+                    class="bg-white/5 border border-white/10 px-6 py-2 rounded-full text-[10px] uppercase font-bold tracking-widest hover:bg-white/10 transition-all flex items-center gap-2 group">
+                    Iniciar Projeto
+                    <i data-lucide="arrow-right" class="w-3 h-3 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+
+            <!-- Action -->
+            <div class="flex lg:hidden">
+                <button class="p-2 glass-card rounded-lg">
+                    <i data-lucide="menu" class="w-6 h-6 text-white"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="relative">
+
+        <!-- HERO SECTION -->
+        <section id="hero" class="min-h-[95vh] flex items-center pt-32 pb-20 px-6 max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-20 items-center w-full">
+
+                <!-- Left: Content -->
+                <div class="space-y-10 animate-fade-in">
+                    <!-- Badge -->
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest text-neutral-400">
+                        <span class="w-2 h-2 rounded-full bg-[#FF2272] animate-pulse"></span>
+                        Design Experience & IA Specialists
+                    </div>
+
+                    <!-- Title -->
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-medium leading-[0.95] tracking-tighter">
+                        Projetos digitais que <br>
+                        <span class="font-serif italic text-[#FF2272]">geram resultado</span>.
+                    </h1>
+
+                    <!-- Subtitle -->
+                    <p class="text-xl text-neutral-400 max-w-xl leading-relaxed">
+                        A gente cria landing pages, sites e interfaces que aumentam conversão e posicionam sua marca no
+                        nível certo.
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="flex flex-wrap gap-6 items-center">
+                        <button class="button-premium group">
+                            <div class="points_wrapper">
+                                <i class="point" style="left:10%; animation-duration:2s"></i>
+                                <i class="point" style="left:50%; animation-duration:1.5s"></i>
+                                <i class="point" style="left:90%; animation-duration:2.5s"></i>
+                            </div>
+                            <span class="relative z-10 flex items-center gap-2">
+                                Iniciar projeto
+                                <i data-lucide="chevron-right"
+                                    class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                            </span>
+                        </button>
+
+                        <a href="#work"
+                            class="text-sm font-semibold text-neutral-400 hover:text-white flex items-center gap-2 group border-b border-transparent hover:border-[#FF2272] transition-all py-1">
+                            Projetos recentes
+                            <i data-lucide="arrow-down"
+                                class="w-4 h-4 group-hover:translate-y-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Right: Visual (Signature CEO Showcase) -->
+                <div class="relative animate-fade-in [animation-delay:0.3s]">
+                    <div class="relative group max-w-[500px] mx-auto lg:ml-auto">
+
+                        <!-- Main Image Card -->
+                        <div id="main-mockup"
+                            class="relative aspect-[4/5] overflow-hidden rounded-[3.5rem] border border-white/10 bg-[#080808] shadow-[0_50px_100px_rgba(0,0,0,0.6)] transition-all duration-300 group-hover:border-[#FF2272]/30 group-hover:shadow-[#FF2272]/5 parallax-layer"
+                            style="isolation: isolate; -webkit-mask-image: -webkit-radial-gradient(white, black);">
+                            <img src="assets/img/perfil4.png" alt="Bruno S. Araújo"
+                                class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000">
+
+                            <!-- Internal Overlays -->
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80 pointer-events-none">
+                            </div>
+
+                            <!-- Top Badge -->
+                            <div
+                                class="absolute top-8 left-8 bg-black/60 backdrop-blur-xl border border-white/10 px-5 py-2 rounded-full pointer-events-none">
+                                <span class="text-[10px] uppercase font-bold tracking-[0.2em] text-white">AI Product
+                                    Designer & Builder
+
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Floating Info Panel -->
+                        <div id="sub-card-1"
+                            class="absolute -bottom-12 -left-12 glass-card p-10 rounded-[2.5rem] border-white/20 shadow-2xl max-w-[320px] backdrop-blur-3xl bg-white/5 animate-float-ui parallax-layer">
+                            <div class="space-y-4">
+                                <div class="space-y-1">
+                                    <h3 class="text-3xl font-bold tracking-tight text-white leading-tight">Bruno S.
+                                        Araújo</h3>
+                                    <p class="text-[11px] uppercase font-black text-neutral-500 tracking-[0.2em]">
+                                        @brunos.araujo</p>
+                                </div>
+                                <div class="h-px w-12 bg-[#FF2272]"></div>
+                                <p class="text-[14px] text-neutral-400 leading-relaxed font-medium">
+                                    Estrategista de Design focado em criar interfaces que posicionam marcas no topo do
+                                    mercado digital.
+                                </p>
+                                <div class="flex items-center gap-4 pt-2">
+                                    <div class="flex -space-x-3">
+                                        <div
+                                            class="w-8 h-8 rounded-full border-2 border-[#0A0A0A] bg-zinc-800 flex items-center justify-center text-[10px] font-bold">
+                                            15+</div>
+                                        <div
+                                            class="w-8 h-8 rounded-full border-2 border-[#0A0A0A] bg-[#FF2272] flex items-center justify-center text-[10px]">
+                                            <i data-lucide="award" class="w-4 h-4 text-white"></i>
+                                        </div>
+                                    </div>
+                                    <span class="text-[10px] font-bold text-neutral-500 uppercase tracking-widest">Anos
+                                        de XP</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Decorative Elements -->
+                        <div
+                            class="absolute -top-10 -right-10 w-64 h-64 bg-[#FF2272]/20 blur-[100px] rounded-full -z-10 animate-pulse">
+                        </div>
+                        <div class="absolute bottom-20 -left-20 w-48 h-48 bg-[#FF9900]/10 blur-[80px] rounded-full -z-10"
+                            style="animation-delay: 1s;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROCESS SECTION (Methodology) -->
+        <section id="experience" class="py-32 px-6 max-w-7xl mx-auto space-y-20 relative">
+            <!-- Section Header -->
+            <div class="space-y-4 text-center animate-on-scroll">
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-[0.3em] text-[#FF2272]">
+                    Metodologia
+                </div>
+                <h2 class="text-4xl md:text-5xl lg:text-7xl font-medium tracking-tighter">
+                    Como <span class="font-serif italic text-[#FF2272]">Trabalhamos</span>
+                </h2>
+                <p class="text-neutral-400 max-w-lg mx-auto">Um processo estratégico desenhado para transformar visões
+                    complexas em produtos digitais de alta performance.</p>
+            </div>
+
+            <!-- Process Content -->
+            <div class="relative max-w-4xl mx-auto pt-10">
+                <!-- Vertical Line -->
+                <div class="absolute left-1/2 top-0 bottom-0 w-px bg-white/5 -translate-x-1/2 hidden md:block z-0">
+                    <div class="absolute top-0 bottom-0 left-0 w-full bg-gradient-to-b from-[#FF9900] via-[#FF2272] to-transparent h-full origin-top scale-y-0"
+                        id="timeline-line"></div>
+                </div>
+
+                <!-- Items -->
+                <div class="space-y-32">
+                    <!-- Step 01: Imersão -->
+                    <div class="relative flex flex-col md:flex-row items-center gap-12 group animate-on-scroll">
+                        <div class="flex-1 text-right md:block hidden">
+                            <div class="space-y-2 opacity-40 group-hover:opacity-100 transition-opacity">
+                                <h3 class="text-3xl font-bold">Imersão</h3>
+                                <p class="text-sm text-neutral-500">Fundação do Projeto.</p>
+                            </div>
+                        </div>
+                        <div class="relative flex-none z-10">
+                            <div
+                                class="w-20 h-20 rounded-full glass-card border-white/10 flex items-center justify-center relative z-20 group-hover:border-[#FF9900]/50 transition-colors bg-[#050505]">
+                                <span class="text-xl font-mono font-bold text-[#FF9900]">01</span>
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-[#FF9900]/20 blur-2xl rounded-full scale-50 group-hover:scale-110 transition-transform z-10">
+                            </div>
+                        </div>
+                        <div class="flex-1 md:text-left text-center">
+                            <div class="md:hidden space-y-2 pb-4">
+                                <h3 class="text-3xl font-bold">Imersão</h3>
+                                <p class="text-sm text-neutral-500">Fundação do Projeto.</p>
+                            </div>
+                            <div
+                                class="p-8 glass-card rounded-3xl border-transparent group-hover:border-white/10 transition-all group-hover:-translate-y-2">
+                                <h4 class="text-lg font-bold text-white mb-2">Imersão & Entendimento</h4>
+                                <p class="text-neutral-400 text-sm leading-relaxed">Alinhamento estratégico de
+                                    objetivos, público-alvo e proposição de valor do produto.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 02: Pesquisa -->
+                    <div class="relative flex flex-col md:flex-row-reverse items-center gap-12 group animate-on-scroll">
+                        <div class="flex-1 text-left md:block hidden">
+                            <div class="space-y-2 opacity-40 group-hover:opacity-100 transition-opacity">
+                                <h3 class="text-3xl font-bold">Pesquisa</h3>
+                                <p class="text-sm text-neutral-500">Inteligência Competitiva.</p>
+                            </div>
+                        </div>
+                        <div class="relative flex-none z-10">
+                            <div
+                                class="w-20 h-20 rounded-full glass-card border-white/10 flex items-center justify-center relative z-20 group-hover:border-[#FF2272]/50 transition-colors bg-[#050505]">
+                                <span class="text-xl font-mono font-bold text-[#FF2272]">02</span>
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-[#FF2272]/20 blur-2xl rounded-full scale-50 group-hover:scale-110 transition-transform z-10">
+                            </div>
+                        </div>
+                        <div class="flex-1 md:text-right text-center">
+                            <div class="md:hidden space-y-2 pb-4">
+                                <h3 class="text-3xl font-bold">Pesquisa</h3>
+                                <p class="text-sm text-neutral-500">Inteligência Competitiva.</p>
+                            </div>
+                            <div
+                                class="p-8 glass-card rounded-3xl border-transparent group-hover:border-white/10 transition-all group-hover:-translate-y-2">
+                                <h4 class="text-lg font-bold text-white mb-2">Pesquisa & Insights</h4>
+                                <p class="text-neutral-400 text-sm leading-relaxed">Benchmark profundo, análise de
+                                    referências globais e mapeamento de dores do usuário.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 03: Arquitetura -->
+                    <div class="relative flex flex-col md:flex-row items-center gap-12 group animate-on-scroll">
+                        <div class="flex-1 text-right md:block hidden">
+                            <div class="space-y-2 opacity-40 group-hover:opacity-100 transition-opacity">
+                                <h3 class="text-3xl font-bold">Estrutura</h3>
+                                <p class="text-sm text-neutral-500">Esqueleto e Navegação.</p>
+                            </div>
+                        </div>
+                        <div class="relative flex-none z-10">
+                            <div
+                                class="w-20 h-20 rounded-full glass-card border-white/10 flex items-center justify-center relative z-20 group-hover:border-[#FF9900]/50 transition-colors bg-[#050505]">
+                                <span class="text-xl font-mono font-bold text-[#FF9900]">03</span>
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-[#FF9900]/20 blur-2xl rounded-full scale-50 group-hover:scale-110 transition-transform z-10">
+                            </div>
+                        </div>
+                        <div class="flex-1 md:text-left text-center">
+                            <div class="md:hidden space-y-2 pb-4">
+                                <h3 class="text-3xl font-bold">Arquitetura</h3>
+                                <p class="text-sm text-neutral-500">Esqueleto e Navegação.</p>
+                            </div>
+                            <div
+                                class="p-8 glass-card rounded-3xl border-transparent group-hover:border-white/10 transition-all group-hover:-translate-y-2">
+                                <h4 class="text-lg font-bold text-white mb-2">Arquitetura & Fluxos</h4>
+                                <p class="text-neutral-400 text-sm leading-relaxed mb-4">Estruturação da jornada do
+                                    usuário e hierarquia de informação.</p>
+                                <div class="p-4 bg-white/5 rounded-2xl border border-white/5">
+                                    <span
+                                        class="text-[10px] font-bold uppercase tracking-widest text-[#FF9900] block mb-1">Wireframes</span>
+                                    <p class="text-xs text-neutral-500">Esboços de baixa fidelidade focados em
+                                        usabilidade e fluxos lógicos.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 04: UI Design -->
+                    <div class="relative flex flex-col md:flex-row-reverse items-center gap-12 group animate-on-scroll">
+                        <div class="flex-1 text-left md:block hidden">
+                            <div class="space-y-2 opacity-40 group-hover:opacity-100 transition-opacity">
+                                <h3 class="text-3xl font-bold">Visual</h3>
+                                <p class="text-sm text-neutral-500">Experiência Sensorial.</p>
+                            </div>
+                        </div>
+                        <div class="relative flex-none z-10">
+                            <div
+                                class="w-20 h-20 rounded-full glass-card border-white/10 flex items-center justify-center relative z-20 group-hover:border-[#FF2272]/50 transition-colors bg-[#050505]">
+                                <span class="text-xl font-mono font-bold text-[#FF2272]">04</span>
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-[#FF2272]/20 blur-2xl rounded-full scale-50 group-hover:scale-110 transition-transform z-10">
+                            </div>
+                        </div>
+                        <div class="flex-1 md:text-right text-center">
+                            <div class="md:hidden space-y-2 pb-4">
+                                <h3 class="text-3xl font-bold">UI Design</h3>
+                                <p class="text-sm text-neutral-500">Experiência Sensorial.</p>
+                            </div>
+                            <div
+                                class="p-8 glass-card rounded-3xl border-transparent group-hover:border-white/10 transition-all group-hover:-translate-y-2">
+                                <h4 class="text-lg font-bold text-white mb-2">UI Design (Alta Fidelidade)</h4>
+                                <p class="text-neutral-400 text-sm leading-relaxed mb-4">Criação do visual final,
+                                    sistemas de design, componentes e identidade visual aplicada.</p>
+                                <div class="p-4 bg-white/5 rounded-2xl border border-white/5 text-left">
+                                    <span
+                                        class="text-[10px] font-bold uppercase tracking-widest text-[#FF2272] block mb-1">Protótipo
+                                        & Validação</span>
+                                    <p class="text-xs text-neutral-500">Interações reais, testes de usabilidade e
+                                        refinamentos finais.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 05: Desenvolvimento -->
+                    <div class="relative flex flex-col md:flex-row items-center gap-12 group animate-on-scroll">
+                        <div class="flex-1 text-right md:block hidden">
+                            <div class="space-y-2 opacity-40 group-hover:opacity-100 transition-opacity">
+                                <h3 class="text-3xl font-bold">Código</h3>
+                                <p class="text-sm text-neutral-500">Engenharia e Performance.</p>
+                            </div>
+                        </div>
+                        <div class="relative flex-none z-10">
+                            <div
+                                class="w-20 h-20 rounded-full glass-card border-white/10 flex items-center justify-center relative z-20 group-hover:border-[#FF9900]/50 transition-colors bg-[#050505]">
+                                <span class="text-xl font-mono font-bold text-[#FF9900]">05</span>
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-[#FF9900]/20 blur-2xl rounded-full scale-50 group-hover:scale-110 transition-transform z-10">
+                            </div>
+                        </div>
+                        <div class="flex-1 md:text-left text-center">
+                            <div class="md:hidden space-y-2 pb-4">
+                                <h3 class="text-3xl font-bold">Dev</h3>
+                                <p class="text-sm text-neutral-500">Engenharia e Performance.</p>
+                            </div>
+                            <div
+                                class="p-8 glass-card rounded-3xl border-transparent group-hover:border-white/10 transition-all group-hover:-translate-y-2">
+                                <h4 class="text-lg font-bold text-white mb-2">Desenvolvimento Front-end</h4>
+                                <p class="text-neutral-400 text-sm leading-relaxed mb-4">Transformação rigorosa do
+                                    design em código clean, responsivo e ultra-veloz.</p>
+                                <div class="p-4 bg-white/5 rounded-2xl border border-white/5">
+                                    <span
+                                        class="text-[10px] font-bold uppercase tracking-widest text-[#FF9900] block mb-1">Entrega
+                                        & Otimização</span>
+                                    <p class="text-xs text-neutral-500">Publicação em produção, melhorias contínuas e
+                                        otimização de SEO/Performance.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS SECTION (Portfolio Stack) -->
+        <section id="work" class="pt-32 pb-16 px-6">
+            <div class="max-w-7xl mx-auto space-y-4 text-center mb-24">
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-[0.3em] text-[#FF2272]">
+                    Portfolio
+                </div>
+                <h2 class="text-4xl md:text-5xl lg:text-7xl font-medium tracking-tighter">
+                    Casos de <span class="font-serif italic text-[#FF2272]">Sucesso</span>
+                </h2>
+            </div>
+
+            <!-- Stacking Projects Container -->
+            <div class="project-stack-container max-w-7xl mx-auto">
+
+                <!-- Project 01: Comércio Tororó -->
+                <div class="project-stack-item animate-on-scroll">
+                    <div class="project-stack-inner border-beam-wrapper">
+                        <div class="border-beam-inner grid lg:grid-cols-2">
+                            <div class="stack-content">
+                                <div class="space-y-6">
+                                    <div class="text-6xl font-bold opacity-10 font-mono tracking-tighter">01</div>
+                                    <h3 class="text-3xl md:text-4xl font-bold tracking-tight">COMÉRCIO TORORÓ</h3>
+                                    <p class="text-neutral-400 leading-relaxed max-w-md line-clamp-2">
+                                        E-commerce náutico premium focado em experiência cinematográfica e alta conversão de vendas.
+                                    </p>
+                                </div>
+                                <div class="pt-8 border-t border-white/5 flex items-center justify-between">
+                                    <div class="flex gap-2">
+                                        <span
+                                            class="px-3 py-1 bg-white/5 rounded-full text-[9px] font-bold uppercase border border-white/5">E-commerce</span>
+                                        <span
+                                            class="px-3 py-1 bg-white/5 rounded-full text-[9px] font-bold uppercase border border-white/5">Performance</span>
+                                    </div>
+                                    <a href="#"
+                                        class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-all">
+                                        <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="stack-video group">
+                                <!-- Main Video (Contain to show full layout) -->
+                                <video src="assets/video/lp-tororo.mov" autoplay muted loop playsinline
+                                    class="relative z-10 w-full h-full object-contain transition-all duration-1000"></video>
+                                <!-- Blurred Background Video (To fill space elegantly) -->
+                                <video src="assets/video/lp-tororo.mov" autoplay muted loop playsinline
+                                    class="absolute inset-0 w-full h-full object-cover opacity-20 blur-2xl transition-all duration-1000 scale-110"></video>
+                                <div class="absolute inset-0 bg-black/40 z-5"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 02: Sonhos de Ana -->
+                <div class="project-stack-item animate-on-scroll [animation-delay:0.2s]">
+                    <div class="project-stack-inner border-beam-wrapper">
+                        <div class="border-beam-inner grid lg:grid-cols-2">
+                            <div class="stack-content">
+                                <div class="space-y-6">
+                                    <div class="text-6xl font-bold opacity-10 font-mono tracking-tighter">02</div>
+                                    <h3 class="text-3xl md:text-4xl font-bold tracking-tight">SONHOS DE ANA</h3>
+                                    <p class="text-neutral-400 leading-relaxed max-w-md line-clamp-2">
+                                        Identidade digital para moda e lifestyle, unindo estética refinada e storytelling visual de impacto.
+                                    </p>
+                                </div>
+                                <div class="pt-8 border-t border-white/5 flex items-center justify-between">
+                                    <div class="flex gap-2">
+                                        <span
+                                            class="px-3 py-1 bg-white/5 rounded-full text-[9px] font-bold uppercase border border-white/5">Fashion</span>
+                                        <span
+                                            class="px-3 py-1 bg-white/5 rounded-full text-[9px] font-bold uppercase border border-white/5">Visual
+                                            identity</span>
+                                    </div>
+                                    <a href="#"
+                                        class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-all">
+                                        <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="stack-video group">
+                                <!-- Main Video (Contain to show full layout) -->
+                                <video src="assets/video/lp-sa-model.mov" autoplay muted loop playsinline
+                                    class="relative z-10 w-full h-full object-contain transition-all duration-1000"></video>
+                                <!-- Blurred Background Video (To fill space elegantly) -->
+                                <video src="assets/video/lp-sa-model.mov" autoplay muted loop playsinline
+                                    class="absolute inset-0 w-full h-full object-cover opacity-20 blur-2xl transition-all duration-1000 scale-110"></video>
+                                <div class="absolute inset-0 bg-black/40 z-5"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 03: Aragão Advocacia -->
+                <div class="project-stack-item animate-on-scroll [animation-delay:0.4s]">
+                    <div class="project-stack-inner border-beam-wrapper">
+                        <div class="border-beam-inner grid lg:grid-cols-2">
+                            <div class="stack-content">
+                                <div class="space-y-6">
+                                    <div class="text-6xl font-bold opacity-10 font-mono tracking-tighter">03</div>
+                                    <h3 class="text-3xl md:text-4xl font-bold tracking-tight">ARAGÃO ADVOCACIA</h3>
+                                    <p class="text-neutral-400 leading-relaxed max-w-md line-clamp-2">
+                                        Interface moderna para o setor jurídico, elevando a autoridade digital através de um design assertivo.
+                                    </p>
+                                </div>
+                                <div class="pt-8 border-t border-white/5 flex items-center justify-between">
+                                    <div class="flex gap-2">
+                                        <span
+                                            class="px-3 py-1 bg-white/5 rounded-full text-[9px] font-bold uppercase border border-white/5">Legal
+                                            Design</span>
+                                        <span
+                                            class="px-3 py-1 bg-white/5 rounded-full text-[9px] font-bold uppercase border border-white/5">UX/UI</span>
+                                    </div>
+                                    <a href="#"
+                                        class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-all">
+                                        <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="stack-video group">
+                                <!-- Main Video (Contain to show full layout) -->
+                                <video src="assets/video/lp-aragao-adv.mov" autoplay muted loop playsinline
+                                    class="relative z-10 w-full h-full object-contain transition-all duration-1000"></video>
+                                <!-- Blurred Background Video (To fill space elegantly) -->
+                                <video src="assets/video/lp-aragao-adv.mov" autoplay muted loop playsinline
+                                    class="absolute inset-0 w-full h-full object-cover opacity-20 blur-2xl transition-all duration-1000 scale-110"></video>
+                                <div class="absolute inset-0 bg-black/40 z-5"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 04: Fernanda Heloísa -->
+                <div class="project-stack-item animate-on-scroll [animation-delay:0.6s]">
+                    <div class="project-stack-inner border-beam-wrapper">
+                        <div class="border-beam-inner grid lg:grid-cols-2">
+                            <div class="stack-content">
+                                <div class="space-y-6">
+                                    <div class="text-6xl font-bold opacity-10 font-mono tracking-tighter">04</div>
+                                    <h3 class="text-3xl md:text-4xl font-bold tracking-tight">FERNANDA HERNANDEZ</h3>
+                                    <p class="text-neutral-400 leading-relaxed max-w-md line-clamp-2">
+                                        Design minimalista e atemporal para presence digital de alto padrão e personificação de marca.
+                                    </p>
+                                </div>
+                                <div class="pt-8 border-t border-white/5 flex items-center justify-between">
+                                    <div class="flex gap-2">
+                                        <span
+                                            class="px-3 py-1 bg-white/5 rounded-full text-[9px] font-bold uppercase border border-white/5">Branding</span>
+                                        <span
+                                            class="px-3 py-1 bg-white/5 rounded-full text-[9px] font-bold uppercase border border-white/5">High-end</span>
+                                    </div>
+                                    <a href="#"
+                                        class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-all">
+                                        <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="stack-video group">
+                                <!-- Main Video (Contain to show full layout) -->
+                                <video src="assets/video/lp-fh-adv.mov" autoplay muted loop playsinline
+                                    class="relative z-10 w-full h-full object-contain transition-all duration-1000"></video>
+                                <!-- Blurred Background Video (To fill space elegantly) -->
+                                <video src="assets/video/lp-fh-adv.mov" autoplay muted loop playsinline
+                                    class="absolute inset-0 w-full h-full object-cover opacity-20 blur-2xl transition-all duration-1000 scale-110"></video>
+                                <div class="absolute inset-0 bg-black/40 z-5"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 05: Piscinas Inteligentes -->
+                <div class="project-stack-item animate-on-scroll [animation-delay:0.8s]">
+                    <div class="project-stack-inner border-beam-wrapper">
+                        <div class="border-beam-inner grid lg:grid-cols-2">
+                            <div class="stack-content">
+                                <div class="space-y-6">
+                                    <div class="text-6xl font-bold opacity-10 font-mono tracking-tighter">05</div>
+                                    <h3 class="text-3xl md:text-4xl font-bold tracking-tight">IA PISCINAS</h3>
+                                    <p class="text-neutral-400 leading-relaxed max-w-md line-clamp-2">
+                                        Ecossistema futurista que integra hardware e software através de interfaces inteligentes e invisíveis.
+                                    </p>
+                                </div>
+                                <div class="pt-8 border-t border-white/5 flex items-center justify-between">
+                                    <div class="flex gap-2">
+                                        <span
+                                            class="px-3 py-1 bg-white/5 rounded-full text-[9px] font-bold uppercase border border-white/5">AI
+                                            / Tech</span>
+                                        <span
+                                            class="px-3 py-1 bg-white/5 rounded-full text-[9px] font-bold uppercase border border-white/5">Automation</span>
+                                    </div>
+                                    <a href="#"
+                                        class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-all">
+                                        <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="stack-video group">
+                                <!-- Main Video (Contain to show full layout) -->
+                                <video src="assets/video/new-ia-piscinas.mov" autoplay muted loop playsinline
+                                    class="relative z-10 w-full h-full object-contain transition-all duration-1000"></video>
+                                <!-- Blurred Background Video (To fill space elegantly) -->
+                                <video src="assets/video/new-ia-piscinas.mov" autoplay muted loop playsinline
+                                    class="absolute inset-0 w-full h-full object-cover opacity-20 blur-2xl transition-all duration-1000 scale-110"></video>
+                                <div class="absolute inset-0 bg-black/40 z-5"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <style>
+            @keyframes about-progress {
+                0% { left: -100%; }
+                100% { left: 100%; }
+            }
+        </style>
+        <section id="about" class="pt-16 pb-32 px-6 max-w-7xl mx-auto relative border-t border-white/5">
+            <!-- Section Header -->
+            <div class="space-y-4 text-center mb-20 animate-on-scroll">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-[0.3em] text-[#FF2272]">
+                    Sobre o Criador
+                </div>
+                <h2 class="text-4xl md:text-5xl lg:text-7xl font-medium tracking-tighter">
+                    Quem é <span class="font-serif italic text-[#FF2272]">Bruno S. Araújo</span>
+                </h2>
+            </div>
+
+            <!-- Decorative Backgrounds -->
+            <div class="absolute inset-0 max-w-7xl mx-auto flex justify-center opacity-30 pointer-events-none">
+                 <div class="w-[500px] h-[500px] bg-[#FF2272]/10 blur-[120px] rounded-full absolute top-1/2 -translate-y-1/2 left-0 animate-pulse"></div>
+                 <div class="w-[400px] h-[400px] bg-[#FF9900]/10 blur-[100px] rounded-full absolute bottom-0 right-10" style="animation-delay: 2s;"></div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-20 items-center w-full relative z-10">
+                <!-- Left: Visual 3D -->
+                <div class="relative perspective-2000 animate-on-scroll group order-2 lg:order-1 mt-20 lg:mt-0">
+                    <div class="relative w-full max-w-[450px] mx-auto transition-transform duration-1000 rotate-y-minus-20 group-hover:rotate-0 transform-style-3d">
+                        <!-- Background Glow Aura -->
+                        <div class="absolute -inset-10 bg-[#FF9900]/20 blur-[80px] rounded-full animate-pulse"></div>
+                        
+                        <!-- Main Image -->
+                        <div class="glass-card rounded-[2.5rem] p-2 overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.5)] border-[#FF9900]/20 bg-[#080808] relative z-10">
+                             <img src="assets/img/perfil2sobre.png" class="w-full h-auto object-cover rounded-[2rem] grayscale group-hover:grayscale-0 transition-all duration-1000 border border-white/5" alt="Bruno S. Araújo">
+                        </div>
+                        
+                        <!-- Floating Glass Element 1: XP -->
+                        <div class="absolute -bottom-8 -left-8 glass-card p-6 rounded-3xl w-48 shadow-2xl animate-float border-white/10 z-20 backdrop-blur-2xl bg-white/5">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-full border border-white/10 bg-gradient-to-tr from-[#FF9900]/20 to-[#FF2272]/20 flex items-center justify-center">
+                                    <span class="text-xl font-bold text-[#FF9900]">+15</span>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="text-xs font-bold text-white uppercase tracking-wider">Anos de</span>
+                                    <span class="text-[10px] text-neutral-500 uppercase tracking-widest font-mono">Carreira</span>
+                                </div>
+                            </div>
+                            <div class="h-1 w-full bg-neutral-800 rounded-full overflow-hidden mt-4 relative">
+                                <div class="absolute top-0 bottom-0 bg-gradient-to-r from-[#FF9900] to-[#FF2272] w-[70%] rounded-full" style="animation: about-progress 3s infinite linear;"></div>
+                            </div>
+                        </div>
+
+                        <!-- Floating Glass Element 2: Award -->
+                        <div class="absolute top-10 -right-10 glass-card p-4 rounded-full shadow-2xl animate-float-reverse border-white/10 flex items-center gap-3 bg-white/5 backdrop-blur-3xl z-20" style="animation-delay: 1s;">
+                            <div class="w-10 h-10 rounded-full border border-[#FF2272]/30 bg-[#FF2272]/10 flex items-center justify-center">
+                                <i data-lucide="star" class="w-4 h-4 text-[#FF2272] fill-[#FF2272]"></i>
+                            </div>
+                            <div class="pr-3">
+                                <span class="text-[10px] font-bold text-white uppercase tracking-wider block">Senior Designer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Content -->
+                <div class="space-y-10 animate-on-scroll order-1 lg:order-2">
+                    <div class="space-y-6 text-neutral-400 text-lg leading-relaxed font-medium">
+                        <p>
+                            Estrategista de Design e UI/UX com mais de <strong class="text-white">15 anos de mercado</strong>, focado em construir interfaces avançadas que posicionam marcas no topo.
+                        </p>
+                        <p>
+                            Mais do que estética, desenvolvo <strong class="text-white border-b border-[#FF2272]/50">experiências cinematográficas</strong> que convertem usuários em clientes engajados e transformam visões em produtos digitais escaláveis. Minha metodologia alia <span class="text-[#FF9900]">inteligência de mercado</span>, arquitetura profunda e <span class="text-[#FF2272]">design sensorial</span>.
+                        </p>
+                    </div>
+
+                    <!-- Highlights Grid -->
+                    <div class="grid grid-cols-2 gap-x-8 gap-y-10 pt-8 border-t border-white/5">
+                        <div class="space-y-3 group cursor-default">
+                            <div class="w-12 h-12 rounded-full glass-card flex items-center justify-center group-hover:scale-110 transition-transform group-hover:border-[#FF2272]/30 border-white/10 bg-[#050505]">
+                                <i data-lucide="zap" class="w-5 h-5 text-[#FF2272] group-hover:fill-[#FF2272] transition-colors"></i>
+                            </div>
+                            <h4 class="text-sm font-bold text-white uppercase tracking-wider">Metodologia Ágil</h4>
+                            <p class="text-xs text-neutral-500">Design de alta velocidade focado em resultados.</p>
+                        </div>
+                        <div class="space-y-3 group cursor-default">
+                            <div class="w-12 h-12 rounded-full glass-card flex items-center justify-center group-hover:scale-110 transition-transform group-hover:border-[#FF9900]/30 border-white/10 bg-[#050505]">
+                                <i data-lucide="layers" class="w-5 h-5 text-[#FF9900] group-hover:fill-[#FF9900] transition-colors"></i>
+                            </div>
+                            <h4 class="text-sm font-bold text-white uppercase tracking-wider">UI/UX Avançado</h4>
+                            <p class="text-xs text-neutral-500">Interfaces premium que evocam autoridade.</p>
+                        </div>
+                        <!-- New Card 3: Frontend -->
+                        <div class="space-y-3 group cursor-default">
+                            <div class="w-12 h-12 rounded-full glass-card flex items-center justify-center group-hover:scale-110 transition-transform group-hover:border-[#FF2272]/30 border-white/10 bg-[#050505]">
+                                <i data-lucide="code" class="w-5 h-5 text-[#FF2272] group-hover:fill-[#FF2272] transition-colors"></i>
+                            </div>
+                            <h4 class="text-sm font-bold text-white uppercase tracking-wider">Frontend</h4>
+                            <p class="text-xs text-neutral-500">Desenvolvimento técnico de alta performance e código limpo.</p>
+                        </div>
+                        <!-- New Card 4: IA Builder -->
+                        <div class="space-y-3 group cursor-default">
+                            <div class="w-12 h-12 rounded-full glass-card flex items-center justify-center group-hover:scale-110 transition-transform group-hover:border-[#FF9900]/30 border-white/10 bg-[#050505]">
+                                <i data-lucide="sparkles" class="w-5 h-5 text-[#FF9900] group-hover:fill-[#FF9900] transition-colors"></i>
+                            </div>
+                            <h4 class="text-sm font-bold text-white uppercase tracking-wider">IA Builder</h4>
+                            <p class="text-xs text-neutral-500">Inteligência Artificial aplicada para otimizar fluxos e produtos.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer-like indicator as in reference image -->
+    <div class="fixed bottom-10 right-10 z-50">
+        <div
+            class="glass-card px-4 py-2 rounded-xl flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-neutral-500">
+            <div class="w-3 h-3 bg-white/10 rounded-full flex items-center justify-center">
+                <div class="w-1 h-1 bg-white rounded-full"></div>
+            </div>
+            Made by BSAUX Team
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

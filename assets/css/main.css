@@ -1,0 +1,382 @@
+:root {
+    --primary: #FF2272;
+    --primary-glow: rgba(255, 34, 114, 0.4);
+    --bg-dark: #050505;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: white;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+.font-serif {
+    font-family: 'Instrument Serif', serif;
+}
+
+/* --- Animations from Styleguide --- */
+@keyframes fadeSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+        filter: blur(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0px);
+    }
+}
+
+@keyframes beam-fall {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    5% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+    95% {
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(120vh);
+        opacity: 0;
+    }
+}
+
+@keyframes floating-points {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-60px);
+        opacity: 0;
+    }
+}
+
+.animate-fade-in {
+    animation: fadeSlideIn 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.animate-beam {
+    animation: beam-fall 6s linear infinite;
+}
+
+/* --- Components --- */
+.button-premium {
+    cursor: pointer;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: linear-gradient(135deg, #FF9900 0%, #FF2272 100%);
+    border-radius: 9999px;
+    padding: 10px 28px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-weight: 600;
+}
+
+.button-premium:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 40px var(--primary-glow);
+}
+
+.points_wrapper {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.points_wrapper .point {
+    bottom: -5px;
+    position: absolute;
+    animation: floating-points infinite ease-in-out;
+    width: 2px;
+    height: 2px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Dot Grid Background */
+.dot-grid {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 30px 30px;
+}
+
+/* Noise Texture */
+.noise-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: -40;
+    opacity: 0.03;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+.perspective-1000 {
+    perspective: 1000px;
+}
+
+.animate-on-scroll {
+    opacity: 0;
+}
+
+.animate-on-scroll.animate {
+    animation: fadeSlideIn 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.ease-out-expo {
+    transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.project-card {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    transform-style: preserve-3d;
+}
+
+.project-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, var(--primary-glow) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.7s ease;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.project-card:hover::after {
+    opacity: 0.15;
+}
+
+video::-webkit-media-controls {
+    display: none !important;
+}
+
+/* Hero Mesh Background */
+.mesh-gradient {
+    background-color: #050505;
+    background-image:
+        radial-gradient(at 0% 0%, rgba(255, 34, 114, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(255, 153, 0, 0.1) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(255, 34, 114, 0.1) 0px, transparent 50%),
+        radial-gradient(at 0% 100%, rgba(255, 153, 0, 0.05) 0px, transparent 50%);
+    background-attachment: fixed;
+}
+
+.cursor-glow {
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(255, 34, 114, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: -20;
+    transform: translate(-50%, -50%);
+    filter: blur(80px);
+    transition: opacity 0.3s ease;
+}
+
+@keyframes float-ui {
+    0%, 100% {
+        transform: translateY(0) translateX(0);
+    }
+    33% {
+        transform: translateY(-10px) translateX(5px);
+    }
+    66% {
+        transform: translateY(5px) translateX(-5px);
+    }
+}
+
+.animate-float-ui {
+    animation: float-ui 8s ease-in-out infinite;
+}
+
+.parallax-container {
+    perspective: 2000px;
+}
+
+/* --- Project Stacking Cards --- */
+.project-stack-container {
+    position: relative;
+    padding-bottom: 5rem;
+}
+
+.project-stack-item {
+    position: sticky;
+    top: 8rem;
+    min-height: 70vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10vh;
+    perspective: 1000px;
+}
+
+.project-stack-inner {
+    width: 100%;
+    max-width: 1200px;
+    background: rgba(8, 8, 8, 0.85);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    display: grid;
+    overflow: hidden;
+    box-shadow:
+        0 -20px 50px -10px rgba(0, 0, 0, 0.5),
+        0 50px 100px -20px rgba(0, 0, 0, 0.9);
+    border-radius: 2.5rem;
+    transition: transform 0.5s ease;
+}
+
+.project-stack-item:hover .project-stack-inner {
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-5px);
+}
+
+@media (max-width: 1024px) {
+    .project-stack-inner {
+        grid-template-columns: 1fr;
+    }
+    .stack-content {
+        order: 2;
+    }
+    .stack-video {
+        aspect-ratio: 16/9;
+        order: 1;
+    }
+}
+
+.stack-content {
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.stack-video {
+    position: relative;
+    background: #000;
+    overflow: hidden;
+}
+
+.parallax-layer {
+    transition: transform 0.2s cubic-bezier(0.2, 0.2, 0, 1);
+}
+
+/* Border Radius Clipping Fix for Animations */
+.clip-fix {
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    mask-image: radial-gradient(white, black);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
+}
+
+/* --- Border Beam Effect --- */
+.border-beam-wrapper {
+    position: relative;
+    padding: 1px;
+    border-radius: 2.5rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.border-beam-wrapper::before {
+    content: "";
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    background: conic-gradient(from 0deg, transparent 20%, #FF2272 40%, #FF9900 50%, #FF2272 60%, transparent 80%);
+    animation: rotate-beam 5s linear infinite;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.border-beam-wrapper:hover::before {
+    opacity: 1;
+}
+
+@keyframes rotate-beam {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.border-beam-inner {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    border-radius: 2.45rem;
+    background: #050505;
+    overflow: hidden;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(1deg); }
+}
+
+@keyframes float-reverse {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(15px) rotate(-1deg); }
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+    animation: float-reverse 7s ease-in-out infinite;
+}
+
+.perspective-2000 {
+    perspective: 2000px;
+}
+
+/* Custom Rotate Utilities */
+.rotate-y-minus-20 {
+    transform: rotateY(-20deg) rotateX(10deg);
+}
+
+.group:hover .group-hover\:rotate-0 {
+    transform: rotateY(0deg) rotateX(0deg);
+}
+
+/* About Skills Table Gap */
+.gap-y-10 {
+    row-gap: 2.5rem;
+}
+
+@keyframes about-progress {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}

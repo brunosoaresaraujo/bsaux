@@ -1,0 +1,17 @@
+# System Files
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Build/Temp
+dist/
+node_modules/
+*.log
+
+# Project Specific
+assets/video/*.mov
+assets/video/*.mp4
+# Nota: Vídeos grandes podem ser ignorados se o repositório for apenas de código. 
+# Se desejar versionar os vídeos, remova as linhas acima.
