@@ -282,6 +282,46 @@ video::-webkit-media-controls {
     position: relative;
     background: #000;
     overflow: hidden;
+    cursor: pointer;
+}
+
+.stack-video.is-playing .video-play-button {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.8);
+}
+
+.video-play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 30;
+    transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    color: white;
+}
+
+.video-play-button i {
+    width: 32px;
+    height: 32px;
+    fill: white;
+    margin-left: 4px;
+}
+
+.stack-video:hover .video-play-button {
+    background: rgba(255, 34, 114, 0.2);
+    border-color: rgba(255, 34, 114, 0.4);
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 0 30px rgba(255, 34, 114, 0.3);
 }
 
 .parallax-layer {
@@ -379,4 +419,36 @@ video::-webkit-media-controls {
 @keyframes about-progress {
     0% { left: -100%; }
     100% { left: 100%; }
+}
+
+/* --- Utility Classes for removing inline styles --- */
+
+/* Animation Delays */
+.delay-0 { animation-delay: 0s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-1 { animation-delay: 1s; }
+.delay-2 { animation-delay: 2s; }
+.delay-3 { animation-delay: 3s; }
+.delay-5 { animation-delay: 5s; }
+
+/* Animation Durations */
+.duration-4 { animation-duration: 4s; }
+.duration-7 { animation-duration: 7s; }
+.duration-9 { animation-duration: 9s; }
+.duration-10 { animation-duration: 10s; }
+
+/* Point Variations for Button Effects */
+.point-left { left: 10%; animation-duration: 2s; }
+.point-center { left: 50%; animation-duration: 1.5s; }
+.point-right { left: 90%; animation-duration: 2.5s; }
+
+/* About Progress Section */
+.about-progress-line {
+    animation: about-progress 3s infinite linear;
+}
+
+/* Isolation & Mask Fix */
+.isolate-mask {
+    isolation: isolate;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
 }

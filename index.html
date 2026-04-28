@@ -34,25 +34,30 @@
         <!-- Enhanced Vertical Beams from Lumina Reference -->
         <div class="absolute inset-0 max-w-7xl mx-auto flex justify-between px-0 opacity-40">
             <div class="flex-1 border-l border-white/5 h-full relative overflow-hidden">
-                <div class="absolute top-0 w-full h-64 bg-gradient-to-b from-transparent via-[#FF9900]/40 to-transparent animate-beam"
-                    style="animation-delay: 0s;"></div>
+                <div
+                    class="absolute top-0 w-full h-64 bg-gradient-to-b from-transparent via-[#FF9900]/40 to-transparent animate-beam delay-0">
+                </div>
             </div>
             <div class="flex-1 border-l border-white/5 h-full relative overflow-hidden hidden md:block">
-                <div class="absolute top-0 w-full h-48 bg-gradient-to-b from-transparent via-[#FF2272]/60 to-transparent animate-beam"
-                    style="animation-delay: 2s; animation-duration: 4s;"></div>
+                <div
+                    class="absolute top-0 w-full h-48 bg-gradient-to-b from-transparent via-[#FF2272]/60 to-transparent animate-beam delay-2 duration-4">
+                </div>
             </div>
             <div class="flex-1 border-l border-white/5 h-full relative overflow-hidden">
-                <div class="absolute top-0 w-full h-80 bg-gradient-to-b from-transparent via-[#FF2272]/30 to-transparent animate-beam"
-                    style="animation-delay: 5s; animation-duration: 10s;"></div>
+                <div
+                    class="absolute top-0 w-full h-80 bg-gradient-to-b from-transparent via-[#FF2272]/30 to-transparent animate-beam delay-5 duration-10">
+                </div>
                 <div class="h-full border-r border-dashed border-white/5 w-px absolute right-0"></div>
             </div>
             <div class="flex-1 border-l border-white/5 h-full relative overflow-hidden hidden md:block">
-                <div class="absolute top-0 w-full h-32 bg-gradient-to-b from-transparent via-[#FF9900]/50 to-transparent animate-beam"
-                    style="animation-delay: 3s; animation-duration: 7s;"></div>
+                <div
+                    class="absolute top-0 w-full h-32 bg-gradient-to-b from-transparent via-[#FF9900]/50 to-transparent animate-beam delay-3 duration-7">
+                </div>
             </div>
             <div class="flex-1 border-l border-white/5 h-full relative overflow-hidden">
-                <div class="absolute top-0 w-full h-96 bg-gradient-to-b from-transparent via-[#FF2272]/20 to-transparent animate-beam"
-                    style="animation-delay: 1s; animation-duration: 9s;"></div>
+                <div
+                    class="absolute top-0 w-full h-96 bg-gradient-to-b from-transparent via-[#FF2272]/20 to-transparent animate-beam delay-1 duration-9">
+                </div>
             </div>
         </div>
     </div>
@@ -122,9 +127,9 @@
                     <div class="flex flex-wrap gap-6 items-center">
                         <button class="button-premium group">
                             <div class="points_wrapper">
-                                <i class="point" style="left:10%; animation-duration:2s"></i>
-                                <i class="point" style="left:50%; animation-duration:1.5s"></i>
-                                <i class="point" style="left:90%; animation-duration:2.5s"></i>
+                                <i class="point point-left"></i>
+                                <i class="point point-center"></i>
+                                <i class="point point-right"></i>
                             </div>
                             <span class="relative z-10 flex items-center gap-2">
                                 Iniciar projeto
@@ -147,8 +152,7 @@
 
                         <!-- Main Image Card -->
                         <div id="main-mockup"
-                            class="relative aspect-[4/5] overflow-hidden rounded-[3.5rem] border border-white/10 bg-[#080808] shadow-[0_50px_100px_rgba(0,0,0,0.6)] transition-all duration-300 group-hover:border-[#FF2272]/30 group-hover:shadow-[#FF2272]/5 parallax-layer"
-                            style="isolation: isolate; -webkit-mask-image: -webkit-radial-gradient(white, black);">
+                            class="relative aspect-[4/5] overflow-hidden rounded-[3.5rem] border border-white/10 bg-[#080808] shadow-[0_50px_100px_rgba(0,0,0,0.6)] transition-all duration-300 group-hover:border-[#FF2272]/30 group-hover:shadow-[#FF2272]/5 parallax-layer isolate-mask">
                             <img src="assets/img/perfil4.png" alt="Bruno S. Araújo"
                                 class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000">
 
@@ -202,8 +206,9 @@
                         <div
                             class="absolute -top-10 -right-10 w-64 h-64 bg-[#FF2272]/20 blur-[100px] rounded-full -z-10 animate-pulse">
                         </div>
-                        <div class="absolute bottom-20 -left-20 w-48 h-48 bg-[#FF9900]/10 blur-[80px] rounded-full -z-10"
-                            style="animation-delay: 1s;"></div>
+                        <div
+                            class="absolute bottom-20 -left-20 w-48 h-48 bg-[#FF9900]/10 blur-[80px] rounded-full -z-10 delay-1">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -454,11 +459,15 @@
                                 </div>
                             </div>
                             <div class="stack-video group">
+                                <!-- Play Button Overlay -->
+                                <div class="video-play-button">
+                                    <i data-lucide="play"></i>
+                                </div>
                                 <!-- Main Video (Contain to show full layout) -->
-                                <video src="assets/video/lp-tororo.mov" autoplay muted loop playsinline
+                                <video src="assets/img/lp-tororo.mp4" muted loop playsinline
                                     class="relative z-10 w-full h-full object-contain transition-all duration-1000"></video>
                                 <!-- Blurred Background Video (To fill space elegantly) -->
-                                <video src="assets/video/lp-tororo.mov" autoplay muted loop playsinline
+                                <video src="assets/img/lp-tororo.mp4" muted loop playsinline
                                     class="absolute inset-0 w-full h-full object-cover opacity-20 blur-2xl transition-all duration-1000 scale-110"></video>
                                 <div class="absolute inset-0 bg-black/40 z-5"></div>
                             </div>
@@ -494,11 +503,15 @@
                                 </div>
                             </div>
                             <div class="stack-video group">
+                                <!-- Play Button Overlay -->
+                                <div class="video-play-button">
+                                    <i data-lucide="play"></i>
+                                </div>
                                 <!-- Main Video (Contain to show full layout) -->
-                                <video src="assets/video/lp-sa-model.mov" autoplay muted loop playsinline
+                                <video src="assets/img/lp-sa-model.mp4" muted loop playsinline
                                     class="relative z-10 w-full h-full object-contain transition-all duration-1000"></video>
                                 <!-- Blurred Background Video (To fill space elegantly) -->
-                                <video src="assets/video/lp-sa-model.mov" autoplay muted loop playsinline
+                                <video src="assets/img/lp-sa-model.mp4" muted loop playsinline
                                     class="absolute inset-0 w-full h-full object-cover opacity-20 blur-2xl transition-all duration-1000 scale-110"></video>
                                 <div class="absolute inset-0 bg-black/40 z-5"></div>
                             </div>
@@ -506,45 +519,6 @@
                     </div>
                 </div>
 
-                <!-- Project 03: Aragão Advocacia -->
-                <div class="project-stack-item animate-on-scroll [animation-delay:0.4s]">
-                    <div class="project-stack-inner border-beam-wrapper">
-                        <div class="border-beam-inner grid lg:grid-cols-2">
-                            <div class="stack-content">
-                                <div class="space-y-6">
-                                    <div class="text-6xl font-bold opacity-10 font-mono tracking-tighter">03</div>
-                                    <h3 class="text-3xl md:text-4xl font-bold tracking-tight">ARAGÃO ADVOCACIA</h3>
-                                    <p class="text-neutral-400 leading-relaxed max-w-md line-clamp-2">
-                                        Interface moderna para o setor jurídico, elevando a autoridade digital através
-                                        de um design assertivo.
-                                    </p>
-                                </div>
-                                <div class="pt-8 border-t border-white/5 flex items-center justify-between">
-                                    <div class="flex gap-2">
-                                        <span
-                                            class="px-3 py-1 bg-white/5 rounded-full text-[9px] font-bold uppercase border border-white/5">Legal
-                                            Design</span>
-                                        <span
-                                            class="px-3 py-1 bg-white/5 rounded-full text-[9px] font-bold uppercase border border-white/5">UX/UI</span>
-                                    </div>
-                                    <a href="#"
-                                        class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-all">
-                                        <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="stack-video group">
-                                <!-- Main Video (Contain to show full layout) -->
-                                <video src="assets/video/lp-aragao-adv.mov" autoplay muted loop playsinline
-                                    class="relative z-10 w-full h-full object-contain transition-all duration-1000"></video>
-                                <!-- Blurred Background Video (To fill space elegantly) -->
-                                <video src="assets/video/lp-aragao-adv.mov" autoplay muted loop playsinline
-                                    class="absolute inset-0 w-full h-full object-cover opacity-20 blur-2xl transition-all duration-1000 scale-110"></video>
-                                <div class="absolute inset-0 bg-black/40 z-5"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
                 <!-- Project 04: Fernanda Heloísa -->
                 <div class="project-stack-item animate-on-scroll [animation-delay:0.6s]">
@@ -552,7 +526,7 @@
                         <div class="border-beam-inner grid lg:grid-cols-2">
                             <div class="stack-content">
                                 <div class="space-y-6">
-                                    <div class="text-6xl font-bold opacity-10 font-mono tracking-tighter">04</div>
+                                    <div class="text-6xl font-bold opacity-10 font-mono tracking-tighter">03</div>
                                     <h3 class="text-3xl md:text-4xl font-bold tracking-tight">FERNANDA HERNANDEZ</h3>
                                     <p class="text-neutral-400 leading-relaxed max-w-md line-clamp-2">
                                         Design minimalista e atemporal para presence digital de alto padrão e
@@ -573,11 +547,15 @@
                                 </div>
                             </div>
                             <div class="stack-video group">
+                                <!-- Play Button Overlay -->
+                                <div class="video-play-button">
+                                    <i data-lucide="play"></i>
+                                </div>
                                 <!-- Main Video (Contain to show full layout) -->
-                                <video src="assets/video/lp-fh-adv.mov" autoplay muted loop playsinline
+                                <video src="assets/img/lp-fh-adv.mp4" muted loop playsinline
                                     class="relative z-10 w-full h-full object-contain transition-all duration-1000"></video>
                                 <!-- Blurred Background Video (To fill space elegantly) -->
-                                <video src="assets/video/lp-fh-adv.mov" autoplay muted loop playsinline
+                                <video src="assets/img/lp-fh-adv.mp4" muted loop playsinline
                                     class="absolute inset-0 w-full h-full object-cover opacity-20 blur-2xl transition-all duration-1000 scale-110"></video>
                                 <div class="absolute inset-0 bg-black/40 z-5"></div>
                             </div>
@@ -591,7 +569,7 @@
                         <div class="border-beam-inner grid lg:grid-cols-2">
                             <div class="stack-content">
                                 <div class="space-y-6">
-                                    <div class="text-6xl font-bold opacity-10 font-mono tracking-tighter">05</div>
+                                    <div class="text-6xl font-bold opacity-10 font-mono tracking-tighter">04</div>
                                     <h3 class="text-3xl md:text-4xl font-bold tracking-tight">IA PISCINAS</h3>
                                     <p class="text-neutral-400 leading-relaxed max-w-md line-clamp-2">
                                         Ecossistema futurista que integra hardware e software através de interfaces
@@ -613,11 +591,15 @@
                                 </div>
                             </div>
                             <div class="stack-video group">
+                                <!-- Play Button Overlay -->
+                                <div class="video-play-button">
+                                    <i data-lucide="play"></i>
+                                </div>
                                 <!-- Main Video (Contain to show full layout) -->
-                                <video src="assets/video/new-ia-piscinas.mov" autoplay muted loop playsinline
+                                <video src="assets/img/new-ia-piscinas.mp4" muted loop playsinline
                                     class="relative z-10 w-full h-full object-contain transition-all duration-1000"></video>
                                 <!-- Blurred Background Video (To fill space elegantly) -->
-                                <video src="assets/video/new-ia-piscinas.mov" autoplay muted loop playsinline
+                                <video src="assets/img/new-ia-piscinas.mp4" muted loop playsinline
                                     class="absolute inset-0 w-full h-full object-cover opacity-20 blur-2xl transition-all duration-1000 scale-110"></video>
                                 <div class="absolute inset-0 bg-black/40 z-5"></div>
                             </div>
@@ -628,17 +610,6 @@
         </section>
 
         <!-- ABOUT SECTION -->
-        <style>
-            @keyframes about-progress {
-                0% {
-                    left: -100%;
-                }
-
-                100% {
-                    left: 100%;
-                }
-            }
-        </style>
         <section id="about" class="pt-16 pb-32 px-6 max-w-7xl mx-auto relative border-t border-white/5">
             <!-- Section Header -->
             <div class="space-y-4 text-center mb-20 animate-on-scroll">
@@ -656,8 +627,9 @@
                 <div
                     class="w-[500px] h-[500px] bg-[#FF2272]/10 blur-[120px] rounded-full absolute top-1/2 -translate-y-1/2 left-0 animate-pulse">
                 </div>
-                <div class="w-[400px] h-[400px] bg-[#FF9900]/10 blur-[100px] rounded-full absolute bottom-0 right-10"
-                    style="animation-delay: 2s;"></div>
+                <div
+                    class="w-[400px] h-[400px] bg-[#FF9900]/10 blur-[100px] rounded-full absolute bottom-0 right-10 delay-2">
+                </div>
             </div>
 
             <div class="grid lg:grid-cols-2 gap-20 items-center w-full relative z-10">
@@ -691,14 +663,15 @@
                                 </div>
                             </div>
                             <div class="h-1 w-full bg-neutral-800 rounded-full overflow-hidden mt-4 relative">
-                                <div class="absolute top-0 bottom-0 bg-gradient-to-r from-[#FF9900] to-[#FF2272] w-[70%] rounded-full"
-                                    style="animation: about-progress 3s infinite linear;"></div>
+                                <div
+                                    class="absolute top-0 bottom-0 bg-gradient-to-r from-[#FF9900] to-[#FF2272] w-[70%] rounded-full about-progress-line">
+                                </div>
                             </div>
                         </div>
 
                         <!-- Floating Glass Element 2: Award -->
-                        <div class="absolute top-10 -right-10 glass-card p-4 rounded-full shadow-2xl animate-float-reverse border-white/10 flex items-center gap-3 bg-white/5 backdrop-blur-3xl z-20"
-                            style="animation-delay: 1s;">
+                        <div
+                            class="absolute top-10 -right-10 glass-card p-4 rounded-full shadow-2xl animate-float-reverse border-white/10 flex items-center gap-3 bg-white/5 backdrop-blur-3xl z-20 delay-1">
                             <div
                                 class="w-10 h-10 rounded-full border border-[#FF2272]/30 bg-[#FF2272]/10 flex items-center justify-center">
                                 <i data-lucide="star" class="w-4 h-4 text-[#FF2272] fill-[#FF2272]"></i>
@@ -816,7 +789,7 @@
             </div>
 
             <!-- Right: CTA Card -->
-            <div class="relative animate-on-scroll" style="animation-delay: 0.2s;">
+            <div class="relative animate-on-scroll delay-200">
                 <!-- Background Glow -->
                 <div
                     class="absolute -inset-4 bg-gradient-to-tr from-[#FF2272]/20 to-[#FF9900]/20 blur-3xl opacity-50 rounded-[3rem]">
@@ -848,9 +821,9 @@
                             <a href="https://forms.gle/placeholder" target="_blank"
                                 class="button-premium w-full group py-5">
                                 <div class="points_wrapper">
-                                    <i class="point" style="left:10%; animation-duration:2s"></i>
-                                    <i class="point" style="left:50%; animation-duration:1.5s"></i>
-                                    <i class="point" style="left:90%; animation-duration:2.5s"></i>
+                                    <i class="point point-left"></i>
+                                    <i class="point point-center"></i>
+                                    <i class="point point-right"></i>
                                 </div>
                                 <span class="relative z-10 flex items-center justify-center gap-3 text-base">
                                     Começar agora

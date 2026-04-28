@@ -34,19 +34,20 @@ window.addEventListener('scroll', () => {
     line.style.transform = `scaleY(${progress})`;
 });
 
-// Portfolio Video Hover Control
-document.querySelectorAll('.project-stack-item').forEach(card => {
-    const videos = card.querySelectorAll('video');
+// Portfolio Video Click Control
+document.querySelectorAll('.stack-video').forEach(container => {
+    const videos = container.querySelectorAll('video');
     
-    card.addEventListener('mouseenter', () => {
-        videos.forEach(v => v.play());
-    });
-
-    card.addEventListener('mouseleave', () => {
-        videos.forEach(v => {
-            v.pause();
-            v.currentTime = 0;
-        });
+    container.addEventListener('click', () => {
+        const isPlaying = container.classList.contains('is-playing');
+        
+        if (isPlaying) {
+            videos.forEach(v => v.pause());
+            container.classList.remove('is-playing');
+        } else {
+            videos.forEach(v => v.play());
+            container.classList.add('is-playing');
+        }
     });
 });
 
