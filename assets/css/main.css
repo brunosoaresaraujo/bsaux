@@ -272,7 +272,6 @@ video::-webkit-media-controls {
 }
 
 .stack-content {
-    padding: 4rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -283,6 +282,8 @@ video::-webkit-media-controls {
     background: #000;
     overflow: hidden;
     cursor: pointer;
+    border-radius: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .stack-video.is-playing .video-play-button {
@@ -378,6 +379,15 @@ video::-webkit-media-controls {
     border-radius: 2.45rem;
     background: #050505;
     overflow: hidden;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+    .border-beam-inner {
+        padding: 4rem;
+        gap: 4rem;
+    }
 }
 
 @keyframes float {
