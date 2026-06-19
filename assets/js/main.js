@@ -1,6 +1,18 @@
 // Init Lucide Icons
 lucide.createIcons();
 
+// Mobile Menu
+const mobileMenu = document.getElementById('mobile-menu');
+document.getElementById('mobile-menu-open')?.addEventListener('click', () => {
+    mobileMenu.style.display = 'flex';
+});
+document.getElementById('mobile-menu-close')?.addEventListener('click', () => {
+    mobileMenu.style.display = 'none';
+});
+document.querySelectorAll('.mobile-nav-link').forEach(link => {
+    link.addEventListener('click', () => { mobileMenu.style.display = 'none'; });
+});
+
 // Reveal on scroll logic for elements
 const observerOptions = {
     threshold: 0.1,

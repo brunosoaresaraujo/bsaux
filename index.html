@@ -23,6 +23,17 @@
 
 <body>
 
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" style="display:none;position:fixed;inset:0;z-index:100;background:rgba(5,5,5,0.97);backdrop-filter:blur(20px);flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;">
+        <button id="mobile-menu-close" style="position:absolute;top:1.5rem;right:1.5rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:0.5rem;padding:0.5rem;cursor:pointer;color:white;display:flex;">
+            <i data-lucide="x" style="width:24px;height:24px;"></i>
+        </button>
+        <a href="#experience" class="mobile-nav-link" style="font-size:1.5rem;font-weight:700;text-transform:uppercase;letter-spacing:0.2em;color:rgba(255,255,255,0.6);">Processo</a>
+        <a href="#work" class="mobile-nav-link" style="font-size:1.5rem;font-weight:700;text-transform:uppercase;letter-spacing:0.2em;color:rgba(255,255,255,0.6);">Portfolio</a>
+        <a href="#about" class="mobile-nav-link" style="font-size:1.5rem;font-weight:700;text-transform:uppercase;letter-spacing:0.2em;color:rgba(255,255,255,0.6);">Sobre</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfxBOxqi_dnaw7PgekRod9mJlfjQ5HSRqwVF0BFRFmu9PVe9A/viewform?usp=publish-editor" target="_blank" class="button-premium" style="margin-top:1rem;">Iniciar Projeto</a>
+    </div>
+
     <!-- Background Elements -->
     <div class="fixed inset-0 -z-30 pointer-events-none mesh-gradient">
         <div class="noise-overlay"></div>
@@ -89,7 +100,7 @@
 
             <!-- Action -->
             <div class="flex lg:hidden">
-                <button class="p-2 glass-card rounded-lg">
+                <button id="mobile-menu-open" class="p-2 glass-card rounded-lg">
                     <i data-lucide="menu" class="w-6 h-6 text-white"></i>
                 </button>
             </div>
