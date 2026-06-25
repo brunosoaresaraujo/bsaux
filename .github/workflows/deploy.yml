@@ -19,7 +19,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
           local-dir: ./
-          server-dir: /bsaux.com.br/bsaux/
+                    server-dir: ./
           exclude: |
             **/.git*
             **/.git*/**
